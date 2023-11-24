@@ -128,13 +128,13 @@ public class B4179 {
 
 }
 
-class Pair {
-    int y;
-    int x;
-
-    public Pair(int y, int x) {
-        this.y = y;
-        this.x = x;
-    }
-}
+//class Pair {
+//    int y;
+//    int x;
+//
+//    public Pair(int y, int x) {
+//        this.y = y;
+//        this.x = x;
+//    }
+//}
 
