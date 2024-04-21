@@ -9,17 +9,17 @@ public class B4375 {
         while (sc.hasNextInt()) {
             int n = sc.nextInt();
 
-            int ret = 1;
             int cnt = 1;
+            int ret = 1;
+
             while (true) {
                 if (ret % n == 0) {
                     System.out.println(cnt);
                     break;
-                }else{
-                    ret = (ret * 10) + 1;
-                    ret %= n;
-                    cnt++;
+                } else {
+                    ret = (ret * 10) % n + 1;
                 }
+                cnt++;
             }
         }
     }
