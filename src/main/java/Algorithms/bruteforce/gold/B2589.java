@@ -5,43 +5,47 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class B2589 {
+    static int n;
+    static int m;
     static char[][] arr = new char[53][53];
-    static List<Pair> landList = new ArrayList<>();
-    static int[][] visited;
+    static int[][] visited = new int[53][53];
+    static ArrayList<Pair> landList = new ArrayList<>();
     static int[] dy = {-1, 0, 1, 0};
     static int[] dx = {0, 1, 0, -1};
-    static int result = Integer.MIN_VALUE;
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
 
         for (int i = 0; i < n; i++) {
             String s = br.readLine();
-            for (int j = 0; j < s.length(); j++) {
-                char c = s.charAt(j);
-                if(c == 'L')landList.add(new Pair(i, j));
-                arr[i][j] = c;
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = s.charAt(j);
+                if (s.charAt(j) == 'L') {
+                    landList.add(new Pair(i, j));
+                }
             }
         }
 
-        for (Pair pair : landList) {
+        int result = Integer.MIN_VALUE;
+
+        for (Pair land : landList) {
+            Queue<Pair> q = new LinkedList<Pair>();
+            q.add(land);
             visited = new int[53][53];
-            Queue<Pair> q = new LinkedList<>();
-            q.add(pair);
-            visited[pair.y][pair.x] = 1;
+            visited[land.y][land.x] = 1;
             int ret = Integer.MIN_VALUE;
+
             while (!q.isEmpty()) {
                 Pair p = q.poll();
                 int y = p.y;
                 int x = p.x;
+
 
                 for (int i = 0; i < 4; i++) {
                     int ny = y + dy[i];
@@ -55,12 +59,11 @@ public class B2589 {
                 }
             }
 
-
-            result = Math.max(ret, result);
+            result = Math.max(result, ret);
         }
         System.out.println(result -1);
-
     }
+
     static class Pair{
         int y;
         int x;
@@ -70,4 +73,5 @@ public class B2589 {
             this.x = x;
         }
     }
+
 }

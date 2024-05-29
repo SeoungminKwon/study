@@ -1,6 +1,5 @@
 package Algorithms.bruteforce.gold;
 
-import Algorithms.bruteforce.gold.B2589.Pair;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
