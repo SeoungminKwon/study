@@ -34,7 +34,6 @@ public class B1992 {
                     ")";
         }
     }
-
     static boolean check(int y, int x, int n){
         char tmp = a[y][x];
         for(int i = y ; i < y+n; i++){
