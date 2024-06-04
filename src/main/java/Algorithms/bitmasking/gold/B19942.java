@@ -1,4 +1,4 @@
-package Algorithms.bitmasking;
+package Algorithms.bitmasking.gold;
 
 import java.util.ArrayList;
 import java.util.Collections;
