@@ -49,6 +49,7 @@ public class B1285 {
         go(here + 1);
         a[here] = ~a[here] & ((1 << n) - 1);
         go(here + 1);
-        a[here] = ~a[here] & ((1 << n) - 1);
+
+
     }
 }
