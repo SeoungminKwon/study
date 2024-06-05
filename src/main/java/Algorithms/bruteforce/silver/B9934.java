@@ -34,8 +34,7 @@ public class B9934 {
         }
     }
 
-    static void print(int start, int end, int level) {
-        ArrayList<Integer> arrayList = arrayLists.get(level);
+    static void print(int start, int end, int level) {ArrayList<Integer> arrayList = arrayLists.get(level);
         int n = (start + end) / 2;
         if (start >= end) {;
             arrayList.add(arr[n]);
