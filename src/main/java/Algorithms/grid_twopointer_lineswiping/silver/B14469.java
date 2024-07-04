@@ -1,4 +1,4 @@
-package Algorithms.grid_twopointer_lineswiping.gold.silver;
+package Algorithms.grid_twopointer_lineswiping.silver;
 
 import java.util.ArrayList;
 import java.util.Comparator;
