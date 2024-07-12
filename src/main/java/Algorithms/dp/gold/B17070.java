@@ -1,4 +1,4 @@
-package Algorithms.dp;
+package Algorithms.dp.gold;
 
 import java.util.Scanner;
 
