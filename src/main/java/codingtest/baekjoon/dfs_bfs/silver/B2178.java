@@ -1,9 +1,8 @@
-package codingtest.baekjoon.dfs_bfs;
+package codingtest.baekjoon.dfs_bfs.silver;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class B2178 {
 

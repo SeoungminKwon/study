@@ -1,8 +1,7 @@
-package codingtest.baekjoon.dfs_bfs;
+package codingtest.baekjoon.dfs_bfs.silver;
 
 
 import java.io.*;
-import java.util.*;
 
 public class B1012 {
     static int t;
