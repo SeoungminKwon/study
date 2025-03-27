@@ -4,39 +4,42 @@ import java.io.*;
 import java.util.*;
 
 public class B2910 {
+
     static int n, c;
     public static void main(String args[]) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        String[] input = br.readLine().split(" ");
+        n = Integer.parseInt(input[0]);
+        c = Integer.parseInt(input[1]);
 
-        n = Integer.parseInt(st.nextToken());
-        c = Integer.parseInt(st.nextToken());
-
-        st = new StringTokenizer(br.readLine());
         Map<Integer, Integer> map = new LinkedHashMap<>();
-        int temp = 0;
+        input = br.readLine().split(" ");
         for (int i = 0; i < n; i++) {
-            temp = Integer.parseInt(st.nextToken());
+            int temp = Integer.parseInt(input[i]);
             map.put(temp, map.getOrDefault(temp, 0) + 1);
         }
 
         List<Pair> pairList = new ArrayList<>();
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+        for(Map.Entry<Integer, Integer> entry  :  map.entrySet()){
             pairList.add(new Pair(entry.getKey(), entry.getValue()));
         }
 
-        pairList.sort((p1, p2) -> p2.cnt - p1.cnt);
+        Collections.sort(pairList, new Comparator<Pair>() {
+
+            public int compare(Pair p1, Pair p2){
+                return p2.cnt - p1.cnt;
+            }
+        });
+
         StringBuilder sb = new StringBuilder();
         for (Pair pair : pairList) {
             for (int i = 0; i < pair.cnt; i++) {
-                sb.append(pair.num).append(" ");
+                sb.append(pair.num);
+                sb.append(" ");
             }
         }
 
-        String ret = sb.toString().trim();
-        System.out.println(ret);
-
-
+        System.out.println(sb.toString().trim());
     }
 
     static class Pair{
@@ -48,4 +51,6 @@ public class B2910 {
             this.cnt = cnt;
         }
     }
+
+
 }
