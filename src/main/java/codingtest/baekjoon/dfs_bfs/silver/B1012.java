@@ -8,37 +8,37 @@ public class B1012 {
     static int[] dy = {-1, 0, 1, 0};
     static int[] dx = {0, 1, 0, -1};
     public static void main(String args[]) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        t = Integer.parseInt(br.readLine());
-
-        for (int tc = 0; tc < t; tc++) {
-            int n, m, k;
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            n = Integer.parseInt(st.nextToken());
-            m = Integer.parseInt(st.nextToken());
-            k = Integer.parseInt(st.nextToken());
-
-            int[][] arr = new int[n][m];
-            int[][] visited = new int[n][m];
-            for (int i = 0; i < k; i++) {
-                st = new StringTokenizer(br.readLine());
-                int y = Integer.parseInt(st.nextToken());
-                int x = Integer.parseInt(st.nextToken());
-                arr[y][x] = 1;
-            }
-
-            int ret = 0;
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < m; j++) {
-                    if(arr[i][j] != 1) continue;
-                    if(visited[i][j] != 0) continue;
-                    ret++;
-                    dfs(i, j, visited, arr, n, m);
-                }
-            }
-
-            System.out.println(ret);
-        }
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        t = Integer.parseInt(br.readLine());
+//
+//        for (int tc = 0; tc < t; tc++) {
+//            int n, m, k;
+//            StringTokenizer st = new StringTokenizer(br.readLine());
+//            n = Integer.parseInt(st.nextToken());
+//            m = Integer.parseInt(st.nextToken());
+//            k = Integer.parseInt(st.nextToken());
+//
+//            int[][] arr = new int[n][m];
+//            int[][] visited = new int[n][m];
+//            for (int i = 0; i < k; i++) {
+//                st = new StringTokenizer(br.readLine());
+//                int y = Integer.parseInt(st.nextToken());
+//                int x = Integer.parseInt(st.nextToken());
+//                arr[y][x] = 1;
+//            }
+//
+//            int ret = 0;
+//            for (int i = 0; i < n; i++) {
+//                for (int j = 0; j < m; j++) {
+//                    if(arr[i][j] != 1) continue;
+//                    if(visited[i][j] != 0) continue;
+//                    ret++;
+//                    dfs(i, j, visited, arr, n, m);
+//                }
+//            }
+//
+//            System.out.println(ret);
+//        }
     }
 
     static void dfs(int y, int x, int[][] visited, int[][] arr, int n, int m) {
