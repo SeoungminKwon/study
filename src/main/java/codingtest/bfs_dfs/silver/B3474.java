@@ -4,22 +4,24 @@ import java.util.*;
 import java.io.*;
 
 public class B3474 {
-    static int tc;
-    public static void main(String[] args) {
+    static int n;
+    public static void main(String[] arsg) {
         Scanner sc = new Scanner(System.in);
-        tc = sc.nextInt();
-        for (int t = 0; t < tc; t++) {
-            int n = sc.nextInt();
+        n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            int input = sc.nextInt();
             int num2 = 0;
             int num5 = 0;
 
-            for (int i = 2; i <= n; i *= 2) {
-                num2 += n / i;
+            for (int j = 2; j <= input; j *= 2) {
+                num2 += input / j;
             }
 
-            for (int i = 5; i <= n; i *= 5) {
-                num5 += n / i;
+            for (int j = 5; j <= input; j *= 5) {
+                num5 += input / j;
             }
+
 
             System.out.println(Math.min(num2, num5));
         }
